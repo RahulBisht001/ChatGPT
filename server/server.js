@@ -16,7 +16,15 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 const app = express()
-app.use(cors());
+const corsOptions = {
+    // origin: process.env.FRONTEND_URL,
+    origin: 'https://chat-gpt-frontend-gules.vercel.app/',
+    // credentials: true,
+    methods: ['GET', 'POST'],
+    optionSuccessStatus: 200
+}
+app.use(cors(corsOptions))
+// app.use(cors());
 app.use(express.json())
 
 
