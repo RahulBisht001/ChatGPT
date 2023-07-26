@@ -19,7 +19,7 @@ const app = express()
 const corsOptions = {
     // origin: process.env.FRONTEND_URL,
     origin: 'https://chat-gpt-frontend-gules.vercel.app/',
-    // credentials: true,
+    credentials: true,
     methods: ['GET', 'POST'],
     optionSuccessStatus: 200
 }
@@ -50,7 +50,7 @@ app.post('/', async (req, res) => {
         })
         
         res.setHeader('Access-Control-Allow-Origin', 'https://chat-gpt-frontend-gules.vercel.app/');
-        res.status(200).send({
+        res.status(200).json({
             bot: response.data.choices[0].text
         })
     } catch (error) {
