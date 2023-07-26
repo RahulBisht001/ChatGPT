@@ -122,7 +122,7 @@ const handleSubmit = async (event) => {
   //! Fetch Data from the Server
   //? as Bot's response to the query
 
-  const response = await fetch('https://chatgpt-yyjf.onrender.com/', {
+  const response = await fetch('https://chat-gpt-server-mu.vercel.app/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
