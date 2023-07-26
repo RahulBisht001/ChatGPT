@@ -21,6 +21,8 @@ app.use(express.json())
 
 
 app.get('/', async (req, res) => {
+    console.log("___HI ____");
+    res.setHeader('Access-Control-Allow-Origin', 'https://chat-gpt-frontend-gules.vercel.app/');
     res.status(200).send({
         message: 'Hello From ChatGPT version R'
     })
@@ -38,7 +40,8 @@ app.post('/', async (req, res) => {
             frequency_penalty: 0.5,
             presence_penalty: 0,
         })
-
+        
+        res.setHeader('Access-Control-Allow-Origin', 'https://chat-gpt-frontend-gules.vercel.app/');
         res.status(200).send({
             bot: response.data.choices[0].text
         })
